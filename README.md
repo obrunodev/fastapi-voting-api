@@ -5,7 +5,7 @@ Checklist de Implementação
 Fase 1: Configuração e Fundamentos
 [ ] Configurar o ambiente de desenvolvimento com Docker e Docker Compose.
 
-[ ] Criar a estrutura básica do projeto com FastAPI.
+[x] Criar a estrutura básica do projeto com FastAPI.
 
 [ ] Conectar a API ao banco de dados PostgreSQL usando o ORM SQLAlchemy.
 

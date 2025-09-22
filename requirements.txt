@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+asyncpg
+passlib[bcrypt]
+python-jose[cryptography]
+python-multipart
+python-decouple

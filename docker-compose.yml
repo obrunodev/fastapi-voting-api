@@ -1,0 +1,26 @@
+services:
+  db:
+    image: postgres:14-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=ozax_movies
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  
+  api:
+    build: .
+    restart: always
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://admin:password@db/ozax_movies
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+volumes:
+  db-data:
